@@ -1,0 +1,20 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "full stack weather app using nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016\u0016\u0016git remote add origin https://github.com/Teesoloz/Weather-App.git"
+  },
+  "author": "Solomon Apuu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
