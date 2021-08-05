@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -12,10 +14,13 @@ app.get("/", function (req, res) {
 
 app.post("/", function (req, res) {
   const query = req.body.cityName;
+  const appid = process.env.API_KEY;
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     query +
-    "&appid=0388480ac45ec3016f1982e67a09822d&units=metric";
+    "&appid=" +
+    appid +
+    "&units=metric";
 
   https.get(url, function (response) {
     console.log(response.statusCode);
@@ -28,7 +33,8 @@ app.post("/", function (req, res) {
       const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
       res.write("<p>There is" + " " + description + " " + "today </p>");
       res.write(
-        "<h1>The temperature in" + " "+
+        "<h1>The temperature in" +
+          " " +
           query +
           " is" +
           " " +
